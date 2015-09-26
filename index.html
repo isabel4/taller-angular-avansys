@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+
+<title>Taller Angular</title>
+
+</head>
+<body>
+<h1 id="">Taller Angular</h1>
+<div ng-controller='Productctrl'>
+<h2 id="">Productos</h2>
+<ul>
+    <li ng-repeat='producto in producto'>
+        {{producto.nombre}}- <button ng-click='agregar(producto)'>Agregar</button>
+    </li>
+    
+</ul>
+
+<button ng-click='comprar()'>Comprar</button>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var app = angular.module('app',[]);
+    console.log(app);
+    app.controller('Productctrl',Productctrl);
+    function Productctrl($scope){
+       $scope.producto=[
+            {id:1,nombre:'silla A'},
+             {id:2,nombre:'silla B'},
+              {id:3,nombre:'silla C'}
+            ];
+            debugger;
+            $scope.agregar=function(Productos){
+                console.log('agregando :',Productos);
+            }
+
+    }
+</script>
+
+</body>
+</html>
